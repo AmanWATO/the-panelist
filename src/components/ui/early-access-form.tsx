@@ -115,7 +115,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all placeholder-[#6B5B4F]"
                         placeholder="Enter your name"
                         required
                         style={{ fontFamily: fonts.body }}
@@ -134,7 +134,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all placeholder-[#6B5B4F]"
                         placeholder="your@email.com"
                         required
                         style={{ fontFamily: fonts.body }}
@@ -150,7 +150,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                     <select
                       value={formData.role}
                       onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value }))}
-                      className="w-full px-4 py-3 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all"
+                      className="w-full px-4 py-2.5 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all text-[#6B5B4F]"
                       required
                       style={{ fontFamily: fonts.body }}
                     >
@@ -187,7 +187,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                   <motion.button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-3 rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 disabled:opacity-50"
+                    className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-2.5 rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 disabled:opacity-50"
                     style={{ fontFamily: fonts.button }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

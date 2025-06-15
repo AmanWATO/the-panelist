@@ -76,7 +76,7 @@ const BlogNewsletter = () => {
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 border-2 border-[#E8E0D6] rounded-full focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all bg-white"
+                    className="w-full pl-12 pr-4 py-3 border-2 border-[#E8E0D6] rounded-full focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all bg-white placeholder-[#6B5B4F]"
                     style={{ fontFamily: fonts.body }}
                     required
                   />
@@ -84,7 +84,7 @@ const BlogNewsletter = () => {
                 <motion.button
                   type="submit"
                   disabled={isLoading}
-                  className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                  className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
                   style={{ fontFamily: fonts.button }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

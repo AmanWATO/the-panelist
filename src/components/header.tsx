@@ -20,11 +20,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Philosophy", href: "#philosophy" },
-    { name: "Artists", href: "#artists" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Philosophy", href: "/philosophy" },
+    { name: "Artists", href: "/artists" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
-    { name: "Contest", href: "#contest" },
+    { name: "Contest", href: "/contest" },
   ];
 
   return (
@@ -37,32 +37,34 @@ const Header = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <motion.div
-          className="flex items-center space-x-2 sm:space-x-3"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
-        >
-          <div className="relative">
-            <Image
-              src="/the_panelist.png"
-              alt="The Panelist Logo"
-              width={40}
-              height={40}
-              className="sm:w-12 sm:h-12 rounded-lg shadow-lg"
-            />
-            <motion.div
-              className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-full"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
-          <span
-            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
-            style={{ fontFamily: fonts.heading }}
+        <Link href="/">
+          <motion.div
+            className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
           >
-            The Panelist
-          </span>
-        </motion.div>
+            <div className="relative">
+              <Image
+                src="/the_panelist.png"
+                alt="The Panelist Logo"
+                width={40}
+                height={40}
+                className="sm:w-12 sm:h-12 rounded-lg shadow-lg"
+              />
+              <motion.div
+                className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-full"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </div>
+            <span
+              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
+              style={{ fontFamily: fonts.heading }}
+            >
+              The Panelist
+            </span>
+          </motion.div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">

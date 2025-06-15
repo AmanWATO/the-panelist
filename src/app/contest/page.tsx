@@ -1,0 +1,291 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { colors, fonts } from "@/utils/theme";
+import { Trophy, Calendar, Users, Award, Clock, Star, Gift } from "lucide-react";
+import { useEffect, useState } from "react";
+import EarlyAccessForm from "@/components/ui/early-access-form";
+
+export default function ContestPage() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    const targetDate = new Date('2025-08-11T00:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const contestFeatures = [
+    { icon: Trophy, title: "Grand Prize", desc: "$1,000 + Featured Exhibition" },
+    { icon: Users, title: "Community Choice", desc: "Voted by our growing community" },
+    { icon: Award, title: "Categories", desc: "Multiple themes and styles" },
+    { icon: Calendar, title: "Duration", desc: "30 days to create your masterpiece" }
+  ];
+
+  const prizes = [
+    { place: "1st Place", prize: "$1,000 + Featured Exhibition", icon: Trophy, color: "from-yellow-400 to-yellow-600" },
+    { place: "2nd Place", prize: "$500 + Portfolio Feature", icon: Star, color: "from-gray-300 to-gray-500" },
+    { place: "3rd Place", prize: "$250 + Community Spotlight", icon: Gift, color: "from-amber-600 to-amber-800" }
+  ];
+
+  const rules = [
+    "Single panel artwork only",
+    "Original work created specifically for the contest",
+    "Include a subtle, meaningful caption",
+    "Submit in high resolution (minimum 2000px)",
+    "One entry per artist",
+    "Must be submitted by contest deadline"
+  ];
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Hero Section */}
+      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            className="w-24 h-24 mx-auto mb-8 relative"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-full h-full border-4 border-[#8B2635] rounded-full relative overflow-hidden bg-gradient-to-br from-[#8B2635]/10 to-[#D4A574]/10">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Trophy className="w-12 h-12 text-[#8B2635]" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
+            style={{ fontFamily: fonts.heading }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            One Frame Wonder
+          </motion.h1>
+
+          <motion.p
+            className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
+            style={{ fontFamily: fonts.body }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Our inaugural contest launches August 11th, 2025. Get ready to draw silence.
+          </motion.p>
+
+          <motion.blockquote
+            className="text-2xl lg:text-3xl italic mb-8 text-[#8B2635] max-w-3xl mx-auto"
+            style={{ fontFamily: fonts.accent }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            "When everyone draws noise, draw silence."
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* Countdown Timer */}
+      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.card }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+              Contest Begins In
+            </h2>
+            <p className="text-lg text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+              Mark your calendars for August 11th, 2025
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mb-12">
+            {[
+              { label: 'Days', value: timeLeft.days },
+              { label: 'Hours', value: timeLeft.hours },
+              { label: 'Minutes', value: timeLeft.minutes },
+              { label: 'Seconds', value: timeLeft.seconds }
+            ].map((item, index) => (
+              <motion.div
+                key={item.label}
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8B2635] to-[#A52A3A] rounded-2xl flex items-center justify-center mb-3 mx-auto shadow-lg">
+                  <span className="text-xl sm:text-2xl font-bold text-white" style={{ fontFamily: fonts.button }}>
+                    {item.value.toString().padStart(2, '0')}
+                  </span>
+                </div>
+                <span className="text-xs sm:text-sm text-[#6B5B4F] font-medium" style={{ fontFamily: fonts.body }}>
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
+              onClick={() => setShowForm(true)}
+              className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl flex items-center space-x-3 mx-auto"
+              style={{ fontFamily: fonts.button }}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Calendar className="w-5 h-5" />
+              <span>Notify Me When Contest Opens</span>
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Prizes Section */}
+      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+              Prizes & Recognition
+            </h2>
+            <p className="text-lg text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+              Celebrating excellence in single-panel artistry
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {prizes.map((prize, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
+                style={{ backgroundColor: colors.card }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${prize.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
+                  <prize.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+                  {prize.place}
+                </h3>
+                <p className="text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+                  {prize.prize}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Contest Features */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {contestFeatures.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-6 rounded-2xl hover:shadow-lg transition-all duration-300"
+                style={{ backgroundColor: colors.card }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+                  {feature.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rules Section */}
+      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.card }}>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+              Contest Rules
+            </h2>
+            <p className="text-lg text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+              Simple guidelines for a fair and inspiring competition
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {rules.map((rule, index) => (
+              <motion.div
+                key={index}
+                className="flex items-start space-x-3 p-4 rounded-lg"
+                style={{ backgroundColor: colors.background }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-6 h-6 bg-[#8B2635] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="text-white text-xs font-bold">{index + 1}</span>
+                </div>
+                <p className="text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
+                  {rule}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <EarlyAccessForm isOpen={showForm} onClose={() => setShowForm(false)} />
+    </div>
+  );
+}
