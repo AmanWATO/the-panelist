@@ -5,15 +5,17 @@ import JoinMovementSection from "@/components/landing-page/join-movement";
 import PhilosophySection from "@/components/landing-page/philosophy-section";
 import PowerOfOneSection from "@/components/landing-page/power-of-one-section";
 import SamplePanelsSection from "@/components/landing-page/sample-panel-section";
+import BlogPreview from "@/components/landing-page/blog-preview";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-       <HeroSection />
+      <HeroSection />
       <PhilosophySection />
       <PowerOfOneSection />
       <ArtistsSection />
       <SamplePanelsSection />
+      <BlogPreview />
       <ComingSoonSection />
       <JoinMovementSection />
     </div>

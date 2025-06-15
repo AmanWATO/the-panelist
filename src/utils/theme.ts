@@ -1,13 +1,16 @@
 export const colors = {
-  background: "#F1EDE5", // Elegant off-white
-  card: "#F0ECE4", // Slightly darker shade for depth
-  accent: "#6E1A2C", // Deep burgundy brushstroke (manually selected from visual)
-  textPrimary: "#1E1E1E", // Near-black for strong readability
-  textMuted: "#7A7A7A", // Soft gray for secondary text
+  background: "#FEFCF8", // Warmer, more artistic off-white
+  card: "#F8F5F0", // Subtle cream for depth
+  accent: "#8B2635", // Rich burgundy with more warmth
+  secondary: "#D4A574", // Warm gold accent
+  textPrimary: "#2C1810", // Rich dark brown
+  textMuted: "#6B5B4F", // Warm gray-brown
+  border: "#E8E0D6", // Soft border color
 };
 
 export const fonts = {
-  heading: "Cormorant Garamond", // Classy, elegant serif for titles
-  body: "Space Grotesk", // Keep this—modern and clean
-  button: "Poppins", // Also good, readable and geometric
+  heading: "Playfair Display", // More artistic serif
+  body: "Inter", // Clean, highly readable
+  accent: "Crimson Text", // Elegant serif for quotes
+  button: "Inter", // Consistent with body
 };
