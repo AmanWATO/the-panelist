@@ -1,23 +1,14 @@
 "use client";
 
-import { colors, fonts } from "@/utils/theme";
+import { fonts } from "@/utils/theme";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Feather } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navItems = [
     { name: "Philosophy", href: "/philosophy" },
@@ -29,9 +20,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-md bg-white/90 shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 bg-[#FEFCF8]`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -81,9 +70,7 @@ const Header = () => {
                 style={{ fontFamily: fonts.body }}
               >
                 {item.name}
-                <motion.div
-                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#8B2635] to-[#D4A574] group-hover:w-full transition-all duration-300"
-                />
+                <motion.div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#8B2635] to-[#D4A574] group-hover:w-full transition-all duration-300" />
               </Link>
             </motion.div>
           ))}
