@@ -2,208 +2,102 @@
 
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
-import { Frame } from "lucide-react";
+import Image from "next/image";
+import { Instagram, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer
-      className="py-12 px-6 border-t border-[#6E1A2C]/20"
+      className="py-16 px-6 border-t border-[#6E1A2C]/20"
       style={{ backgroundColor: colors.card }}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center space-x-2 mb-4">
-              <Frame className="w-6 h-6 text-[#6E1A2C]" />
-              <span
-                className="text-xl font-bold text-[#1E1E1E]"
-                style={{ fontFamily: fonts.heading }}
-              >
-                The Panelist
-              </span>
-            </div>
-            <p
-              className="text-[#7A7A7A] text-sm"
-              style={{ fontFamily: fonts.body }}
-            >
-              Where art speaks in silence. A platform for minimalist
-              storytelling and single-panel mastery.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4
-              className="font-bold mb-4 text-[#1E1E1E]"
-              style={{ fontFamily: fonts.heading }}
-            >
-              Philosophy
-            </h4>
-            <ul
-              className="space-y-2 text-sm"
-              style={{ fontFamily: fonts.body }}
-            >
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  The Manifesto
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Minimalist Art
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Single Panel Guide
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4
-              className="font-bold mb-4 text-[#1E1E1E]"
-              style={{ fontFamily: fonts.heading }}
-            >
-              Community
-            </h4>
-            <ul
-              className="space-y-2 text-sm"
-              style={{ fontFamily: fonts.body }}
-            >
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Artist Portal
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Brainstorm Sessions
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4
-              className="font-bold mb-4 text-[#1E1E1E]"
-              style={{ fontFamily: fonts.heading }}
-            >
-              Connect
-            </h4>
-            <ul
-              className="space-y-2 text-sm"
-              style={{ fontFamily: fonts.body }}
-            >
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Newsletter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Discord
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-        </div>
-
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+        {/* Left: Logo & Description */}
         <motion.div
-          className="pt-8 border-t border-[#6E1A2C]/10 flex flex-col md:flex-row justify-between items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="flex flex-col items-start"
         >
+          <div className="flex items-center space-x-3 mb-6">
+            <Image
+              src="/the_panelist.png"
+              alt="The Panelist Logo"
+              width={56}
+              height={56}
+              className="rounded-[12px] drop-shadow-[0_10px_20px_rgba(0,0,0,0.2)]"
+            />
+            <span
+              className="text-2xl font-bold text-[#1E1E1E]"
+              style={{ fontFamily: fonts.heading }}
+            >
+              The Panelist
+            </span>
+          </div>
+
           <p
-            className="text-[#7A7A7A] text-sm mb-4 md:mb-0"
+            className="text-[#7A7A7A] text-sm leading-relaxed max-w-sm"
             style={{ fontFamily: fonts.body }}
           >
-            © 2025 The Panelist. All rights reserved. Made with silence in mind.
+            Where art speaks in silence. A platform for minimalist storytelling
+            and single-panel mastery. Join the quiet revolution.
           </p>
-          <div
-            className="flex space-x-6 text-sm"
-            style={{ fontFamily: fonts.body }}
+        </motion.div>
+
+        {/* Right: Contact & Social */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-start"
+        >
+          <h4
+            className="text-lg font-semibold text-[#1E1E1E] mb-4"
+            style={{ fontFamily: fonts.heading }}
           >
+            Contact
+          </h4>
+
+          <div className="flex items-center mb-3">
+            <Mail className="w-5 h-5 text-[#6E1A2C] mr-2" />
             <a
-              href="#"
-              className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
+              href="mailto:thepanelist25@gmail.com"
+              className="text-[#7A7A7A] text-sm hover:text-[#6E1A2C] transition-colors"
+              style={{ fontFamily: fonts.body }}
             >
-              Privacy
+              thepanelist25@gmail.com
             </a>
+          </div>
+
+          <div className="flex items-center space-x-4 mt-2">
             <a
-              href="#"
+              href="https://instagram.com/YOUR_INSTAGRAM_HANDLE"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
             >
-              Terms
-            </a>
-            <a
-              href="#"
-              className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"
-            >
-              Support
+              <Instagram className="w-5 h-5" />
             </a>
           </div>
         </motion.div>
       </div>
+
+      <motion.div
+        className="mt-12 border-t border-[#6E1A2C]/10 pt-6 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <p
+          className="text-[#7A7A7A] text-sm"
+          style={{ fontFamily: fonts.body }}
+        >
+          © 2025 The Panelist. All rights reserved. Made with silence in mind.
+        </p>
+      </motion.div>
     </footer>
   );
 };
