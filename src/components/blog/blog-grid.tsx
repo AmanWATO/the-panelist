@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogGrid = () => {
   const blogPosts = [
@@ -160,15 +161,15 @@ const BlogGrid = () => {
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.slice(1).map((post, index) => (
-            <motion.article
-              key={post.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
+            <Link href={`/blog/${post.id}`} key={post.id}>
+              <motion.article
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={post.image}
@@ -182,7 +183,7 @@ const BlogGrid = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <div className="flex items-center space-x-4 mb-3 text-xs text-[#6B5B4F]">
                   <div className="flex items-center space-x-1">
@@ -194,21 +195,21 @@ const BlogGrid = () => {
                     <span>{post.readTime}</span>
                   </div>
                 </div>
-                
+
                 <h3 
                   className="text-lg font-bold mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors"
                   style={{ fontFamily: fonts.heading }}
                 >
                   {post.title}
                 </h3>
-                
+
                 <p 
                   className="text-[#6B5B4F] text-sm mb-4 leading-relaxed"
                   style={{ fontFamily: fonts.body }}
                 >
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-end">
                   <motion.div
                     className="text-[#8B2635] opacity-0 group-hover:opacity-100 transition-opacity"
@@ -218,7 +219,8 @@ const BlogGrid = () => {
                   </motion.div>
                 </div>
               </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </div>
 

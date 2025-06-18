@@ -72,20 +72,21 @@ const BlogPreview = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {featuredPosts.map((post, index) => (
-            <motion.article
-              key={post.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
+            <Link href={`/blog/${post.id}`} key={post.id}>
+              <motion.article
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
@@ -130,7 +131,8 @@ const BlogPreview = () => {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </motion.div>
               </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </div>
 

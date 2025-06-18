@@ -56,6 +56,7 @@ export default function BlogDetailPage() {
             src={blogPost.image}
             alt={blogPost.title}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
