@@ -11,68 +11,7 @@ export default function GalleryPage() {
 
   const categories = ["All", "Minimalist", "Abstract", "Portrait", "Urban", "Nature"];
 
-  const samplePanels = [
-    {
-      id: 1,
-      title: "Silent Conversations",
-      artist: "Sarah Chen",
-      caption: "Sometimes the loudest conversations happen in silence.",
-      category: "Minimalist",
-      likes: 234,
-      views: 1200,
-      comments: 18
-    },
-    {
-      id: 2,
-      title: "Urban Pause",
-      artist: "Marcus Rivera",
-      caption: "What remains when everything else fades?",
-      category: "Urban",
-      likes: 189,
-      views: 890,
-      comments: 12
-    },
-    {
-      id: 3,
-      title: "Between Words",
-      artist: "Elena Vasquez",
-      caption: "The space between words holds the deepest truths.",
-      category: "Abstract",
-      likes: 156,
-      views: 750,
-      comments: 9
-    },
-    {
-      id: 4,
-      title: "Morning Reflection",
-      artist: "David Kim",
-      caption: "In stillness, we find ourselves.",
-      category: "Nature",
-      likes: 298,
-      views: 1450,
-      comments: 24
-    },
-    {
-      id: 5,
-      title: "Quiet Strength",
-      artist: "Anna Thompson",
-      caption: "Power doesn't always announce itself.",
-      category: "Portrait",
-      likes: 267,
-      views: 1100,
-      comments: 15
-    },
-    {
-      id: 6,
-      title: "City Dreams",
-      artist: "James Wilson",
-      caption: "Even concrete can dream.",
-      category: "Urban",
-      likes: 178,
-      views: 820,
-      comments: 11
-    }
-  ];
+  const samplePanels: any[] = [];
 
   const filteredPanels = selectedCategory === "All" 
     ? samplePanels 
@@ -150,8 +89,35 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPanels.map((panel, index) => (
+          {filteredPanels.length === 0 ? (
+            <motion.div
+              className="text-center py-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-24 h-24 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-2xl flex items-center justify-center mx-auto mb-8">
+                <Frame className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+                Gallery Coming Soon
+              </h3>
+              <p className="text-[#6B5B4F] mb-8 max-w-md mx-auto" style={{ fontFamily: fonts.body }}>
+                We're preparing to showcase amazing single-panel artworks. Submit your panel for the One Wonder Frame competition!
+              </p>
+              <motion.button
+                className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300"
+                style={{ fontFamily: fonts.button }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Apply for Competition
+              </motion.button>
+            </motion.div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPanels.map((panel, index) => (
               <motion.div
                 key={panel.id}
                 className="group cursor-pointer"
@@ -209,8 +175,9 @@ export default function GalleryPage() {
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

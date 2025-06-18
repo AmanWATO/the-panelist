@@ -19,12 +19,12 @@ const BlogPreview = () => {
     },
     {
       id: 2,
-      title: "Artist Spotlight: Masters of Minimalism",
-      excerpt: "Meet the artists redefining visual storytelling.",
+      title: "One Wonder Frame Competition",
+      excerpt: "Join our art competition on August 11th and showcase your talent.",
       date: "2025-01-12",
       readTime: "8 min read",
       image: "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=600",
-      category: "Artists"
+      category: "Competition"
     },
     {
       id: 3,

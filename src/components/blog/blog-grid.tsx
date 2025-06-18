@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
-import { Calendar, Clock, ArrowRight, User } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const BlogGrid = () => {
@@ -11,7 +11,6 @@ const BlogGrid = () => {
       id: 1,
       title: "The Philosophy of Single-Panel Art",
       excerpt: "Why one frame holds more power than a thousand words. Exploring the minimalist approach to visual storytelling.",
-      author: "Sarah Chen",
       date: "2025-01-15",
       readTime: "5 min read",
       category: "Philosophy",
@@ -20,19 +19,17 @@ const BlogGrid = () => {
     },
     {
       id: 2,
-      title: "Artist Spotlight: Masters of Minimalism",
-      excerpt: "Meet the artists who are redefining what it means to tell a story with restraint and precision.",
-      author: "Marcus Rivera",
+      title: "One Wonder Frame Competition Guidelines",
+      excerpt: "Everything you need to know about our upcoming art competition on August 11th. Rules, submission process, and what makes a winning panel.",
       date: "2025-01-12",
       readTime: "8 min read",
-      category: "Artists",
+      category: "Competition",
       image: "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       id: 3,
       title: "The Art of Layered Captions",
       excerpt: "How to write captions that add depth without overwhelming the visual narrative.",
-      author: "Elena Vasquez",
       date: "2025-01-10",
       readTime: "6 min read",
       category: "Technique",
@@ -42,7 +39,6 @@ const BlogGrid = () => {
       id: 4,
       title: "Building Community Through Quiet Art",
       excerpt: "How minimalist art creates deeper connections and more meaningful conversations.",
-      author: "David Kim",
       date: "2025-01-08",
       readTime: "4 min read",
       category: "Community",
@@ -51,8 +47,7 @@ const BlogGrid = () => {
     {
       id: 5,
       title: "From Sketch to Statement",
-      excerpt: "A behind-the-scenes look at the creative process of our featured artists.",
-      author: "Anna Thompson",
+      excerpt: "A behind-the-scenes look at the creative process behind powerful single-panel art.",
       date: "2025-01-05",
       readTime: "7 min read",
       category: "Process",
@@ -62,7 +57,6 @@ const BlogGrid = () => {
       id: 6,
       title: "The Future of Visual Storytelling",
       excerpt: "Where single-panel art fits in our increasingly digital and fast-paced world.",
-      author: "James Wilson",
       date: "2025-01-03",
       readTime: "5 min read",
       category: "Future",
@@ -70,7 +64,7 @@ const BlogGrid = () => {
     }
   ];
 
-  const categories = ["All", "Philosophy", "Artists", "Technique", "Community", "Process", "Future"];
+  const categories = ["All", "Philosophy", "Competition", "Technique", "Community", "Process", "Future"];
 
   return (
     <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.card }}>
@@ -149,13 +143,7 @@ const BlogGrid = () => {
                 >
                   {blogPosts[0].excerpt}
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <User className="w-5 h-5 text-[#6B5B4F]" />
-                    <span className="text-sm text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
-                      {blogPosts[0].author}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-end">
                   <motion.button
                     className="flex items-center space-x-2 text-[#8B2635] font-medium hover:text-[#A52A3A] transition-colors"
                     whileHover={{ x: 5 }}
@@ -221,13 +209,7 @@ const BlogGrid = () => {
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <User className="w-4 h-4 text-[#6B5B4F]" />
-                    <span className="text-xs text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
-                      {post.author}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-end">
                   <motion.div
                     className="text-[#8B2635] opacity-0 group-hover:opacity-100 transition-opacity"
                     whileHover={{ x: 3 }}
