@@ -13,7 +13,6 @@ const Header = () => {
   const navItems = [
     { name: "Philosophy", href: "/philosophy" },
     { name: "Artists", href: "/artists" },
-    { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
     { name: "Contest", href: "/contest" },
   ];

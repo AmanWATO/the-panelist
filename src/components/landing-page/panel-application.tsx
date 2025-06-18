@@ -20,18 +20,18 @@ const PanelApplication = () => {
   const features = [
     {
       icon: Award,
-      title: "Featured Exhibition",
-      description: "Selected panels will be showcased on our artist panel section"
+      title: "Permanent Exhibition",
+      description: "Your selected panels will be permanently featured on our artist panel section"
     },
     {
       icon: Trophy,
-      title: "One Wonder Frame",
-      description: "Compete in our prestigious competition on August 11th"
+      title: "Panelist Status",
+      description: "Become a recognized member of The Panelist artist community"
     },
     {
       icon: Sparkles,
-      title: "Community Recognition",
-      description: "Join a curated community of talented single-panel artists"
+      title: "Ongoing Exposure",
+      description: "Continuous showcase of your work to our growing art-loving audience"
     }
   ];
 
@@ -84,14 +84,14 @@ const PanelApplication = () => {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
             style={{ fontFamily: fonts.heading }}
           >
-            Apply for Your Panel
+            Become a Panelist Artist
           </h2>
 
           <p
             className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
             style={{ fontFamily: fonts.body }}
           >
-            Submit your single-panel masterpiece and get a chance to be featured on our artist panel. Join the One Wonder Frame competition on August 11th.
+            Join our curated community of single-panel artists. Submit your work to be featured as a permanent panelist and showcase your art to our growing audience.
           </p>
 
           <motion.div
@@ -99,9 +99,9 @@ const PanelApplication = () => {
             animate={{ opacity: [0.8, 1, 0.8] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Calendar className="w-5 h-5 text-[#8B2635]" />
+            <Sparkles className="w-5 h-5 text-[#8B2635]" />
             <span className="text-[#8B2635] font-medium" style={{ fontFamily: fonts.body }}>
-              Competition Date: August 11th, 2025
+              Rolling Applications - Apply Anytime
             </span>
           </motion.div>
         </motion.div>
@@ -154,7 +154,7 @@ const PanelApplication = () => {
               className="text-2xl font-bold mb-6 text-center text-[#2C1810]"
               style={{ fontFamily: fonts.heading }}
             >
-              Get Early Access to Submit
+              Apply to Become a Panelist
             </h3>
             
             {isSubmitted ? (
@@ -201,7 +201,7 @@ const PanelApplication = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Award className="w-5 h-5" />
-                  <span>Apply for Panel Submission</span>
+                  <span>Apply to Become a Panelist</span>
                 </motion.button>
               </form>
             )}
@@ -210,7 +210,7 @@ const PanelApplication = () => {
               className="text-xs text-[#6B5B4F] text-center mt-4"
               style={{ fontFamily: fonts.body }}
             >
-              We'll email you with submission guidelines and competition details closer to the date.
+              We'll email you with application guidelines and submission process details.
             </p>
           </div>
         </motion.div>
