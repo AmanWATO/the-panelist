@@ -119,17 +119,17 @@ const Header = () => {
         </motion.button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Enhanced Design */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-[#E8E0D6] shadow-xl"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-lg border-t border-[#E8E0D6] shadow-2xl"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="p-6 space-y-4">
+            <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -139,7 +139,7 @@ const Header = () => {
                 >
                   <Link
                     href={item.href}
-                    className="block text-[#6B5B4F] hover:text-[#8B2635] transition-colors duration-300 font-medium py-2"
+                    className="block text-[#6B5B4F] hover:text-[#8B2635] transition-colors duration-300 font-medium py-2 px-2 rounded-lg hover:bg-[#F8F5F0]"
                     style={{ fontFamily: fonts.body }}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -148,12 +148,12 @@ const Header = () => {
                 </motion.div>
               ))}
               <motion.button
-                className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-6 py-3 rounded-full font-medium flex items-center justify-center space-x-2 mt-4"
+                className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-6 py-3 rounded-full font-medium flex items-center justify-center space-x-2 mt-4 shadow-lg"
                 style={{ fontFamily: fonts.button }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.96 }}
               >
                 <Feather className="w-4 h-4" />
                 <span>Join Early</span>
