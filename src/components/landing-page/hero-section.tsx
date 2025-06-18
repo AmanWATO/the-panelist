@@ -167,15 +167,6 @@ const HeroSection = () => {
               <Sparkles className="w-4 h-4" />
             </motion.div>
           </motion.button>
-
-          <motion.button
-            className="border-2 border-[#8B2635] text-[#8B2635] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#8B2635] hover:text-white transition-all duration-300"
-            style={{ fontFamily: fonts.button }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Explore Gallery
-          </motion.button>
         </motion.div>
 
         {/* Scroll Indicator */}

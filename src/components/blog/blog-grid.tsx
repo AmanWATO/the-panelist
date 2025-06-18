@@ -103,59 +103,62 @@ const BlogGrid = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="grid lg:grid-cols-2 gap-0">
-              <div className="relative h-64 lg:h-full">
-                <Image
-                  src={blogPosts[0].image}
-                  alt={blogPosts[0].title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-[#8B2635] text-white px-3 py-1 rounded-full text-xs font-medium">
-                    Featured
-                  </span>
-                </div>
-              </div>
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <div className="flex items-center space-x-4 mb-4 text-sm text-[#6B5B4F]">
-                  <span className="bg-[#D4A574]/20 text-[#8B2635] px-3 py-1 rounded-full font-medium">
-                    {blogPosts[0].category}
-                  </span>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(blogPosts[0].date).toLocaleDateString()}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{blogPosts[0].readTime}</span>
+          <Link href={`/blog/${blogPosts[0].id}`}>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-full">
+                  <Image
+                    src={blogPosts[0].image}
+                    alt={blogPosts[0].title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#8B2635] text-white px-3 py-1 rounded-full text-xs font-medium">
+                      Featured
+                    </span>
                   </div>
                 </div>
-                <h2 
-                  className="text-2xl lg:text-3xl font-bold mb-4 text-[#2C1810]"
-                  style={{ fontFamily: fonts.heading }}
-                >
-                  {blogPosts[0].title}
-                </h2>
-                <p 
-                  className="text-[#6B5B4F] mb-6 leading-relaxed"
-                  style={{ fontFamily: fonts.body }}
-                >
-                  {blogPosts[0].excerpt}
-                </p>
-                <div className="flex items-center justify-end">
-                  <motion.button
-                    className="flex items-center space-x-2 text-[#8B2635] font-medium hover:text-[#A52A3A] transition-colors"
-                    whileHover={{ x: 5 }}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="flex items-center space-x-4 mb-4 text-sm text-[#6B5B4F]">
+                    <span className="bg-[#D4A574]/20 text-[#8B2635] px-3 py-1 rounded-full font-medium">
+                      {blogPosts[0].category}
+                    </span>
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{new Date(blogPosts[0].date).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{blogPosts[0].readTime}</span>
+                    </div>
+                  </div>
+                  <h2 
+                    className="text-2xl lg:text-3xl font-bold mb-4 text-[#2C1810] group-hover:text-[#8B2635] transition-colors"
+                    style={{ fontFamily: fonts.heading }}
                   >
-                    <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.button>
+                    {blogPosts[0].title}
+                  </h2>
+                  <p 
+                    className="text-[#6B5B4F] mb-6 leading-relaxed"
+                    style={{ fontFamily: fonts.body }}
+                  >
+                    {blogPosts[0].excerpt}
+                  </p>
+                  <div className="flex items-center justify-end">
+                    <motion.div
+                      className="flex items-center space-x-2 text-[#8B2635] font-medium group-hover:text-[#A52A3A] transition-colors"
+                      whileHover={{ x: 5 }}
+                    >
+                      <span>Read More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </motion.div>
 
         {/* Blog Grid */}
@@ -175,6 +178,7 @@ const BlogGrid = () => {
                   src={post.image}
                   alt={post.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
