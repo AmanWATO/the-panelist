@@ -191,30 +191,29 @@ export default function ContestPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {prizes.map((prize, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
-                style={{ backgroundColor: colors.card }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-              >
-                <div className={`w-16 h-16 bg-gradient-to-r ${prize.color} rounded-xl flex items-center justify-center mx-auto mb-6`}>
-                  <prize.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
-                  {prize.place}
-                </h3>
-                <p className="text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
-                  {prize.prize}
-                </p>
-              </motion.div>
-            ))}
+          <motion.div
+          className="text-center p-8 bg-white rounded-2xl shadow-lg max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="w-16 h-16 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-full flex items-center justify-center mx-auto mb-6">
+            <Trophy className="w-8 h-8 text-white" />
           </div>
+          <h3
+            className="text-2xl font-bold mb-4 text-[#2C1810]"
+            style={{ fontFamily: fonts.heading }}
+          >
+            Recognition & Exhibition
+          </h3>
+          <p
+            className="text-[#6B5B4F] leading-relaxed"
+            style={{ fontFamily: fonts.body }}
+          >
+            Selected works will be featured in our permanent exhibition, providing ongoing exposure to our growing community of art enthusiasts. Winners receive recognition as featured panelists and become part of The Panelist's curated collection.
+          </p>
+        </motion.div>
 
           {/* Contest Features */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">

@@ -45,6 +45,7 @@ const PhilosophySection = () => {
               className="mt-8 text-[#6E1A2C] font-medium hover:underline flex items-center space-x-2"
               style={{ fontFamily: fonts.button }}
               whileHover={{ x: 5 }}
+              onClick={() => window.location.href = '/manifesto'}
             >
               <span>Read the Manifesto</span>
               <ArrowRight className="w-4 h-4" />
