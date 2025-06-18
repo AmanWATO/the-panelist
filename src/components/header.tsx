@@ -173,6 +173,14 @@ const Header = () => {
                         {item.name}
                       </Link>
                     ))}
+                     <Link
+                    href="/search"
+                    className="block py-3 px-4 text-base sm:text-lg font-medium text-[#2C1810] hover:bg-[#F8F5F0] rounded-lg transition-colors"
+                    style={{ fontFamily: fonts.body }}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Search
+                  </Link>
                   </div>
                 </nav>
               </div>

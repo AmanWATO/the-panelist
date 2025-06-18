@@ -45,6 +45,45 @@ const Footer = () => {
           </p>
         </motion.div>
 
+        {/* Middle: Quick Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-start"
+        >
+          <h4
+            className="text-lg font-semibold text-[#1E1E1E] mb-4"
+            style={{ fontFamily: fonts.heading }}
+          >
+            Legal
+          </h4>
+          <div className="space-y-2">
+            <a
+              href="/terms"
+              className="text-[#7A7A7A] text-sm hover:text-[#6E1A2C] transition-colors block"
+              style={{ fontFamily: fonts.body }}
+            >
+              Terms & Conditions
+            </a>
+            <a
+              href="/privacy"
+              className="text-[#7A7A7A] text-sm hover:text-[#6E1A2C] transition-colors block"
+              style={{ fontFamily: fonts.body }}
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/faq"
+              className="text-[#7A7A7A] text-sm hover:text-[#6E1A2C] transition-colors block"
+              style={{ fontFamily: fonts.body }}
+            >
+              FAQ
+            </a>
+          </div>
+        </motion.div>
+
         {/* Right: Contact & Social */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
