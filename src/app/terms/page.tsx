@@ -4,10 +4,32 @@
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { FileText } from "lucide-react";
+import Script from "next/script";
 
 function TermsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms & Conditions",
+    "description": "The Panelist's terms and conditions governing the use of our platform and services.",
+    "url": "https://thepanelist.com/terms",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Panelist"
+    },
+    "dateModified": "2025-01-01"
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="terms-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section
         className="py-16 px-4 sm:px-6"
@@ -178,7 +200,8 @@ function TermsPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

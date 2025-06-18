@@ -1,9 +1,8 @@
-
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://thepanelist.com'
-  
+
   return [
     {
       url: baseUrl,

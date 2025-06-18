@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { HelpCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import Script from "next/script";
 
 function FAQPage() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -56,8 +57,29 @@ function FAQPage() {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="faq-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section
         className="py-16 px-4 sm:px-6"
@@ -183,7 +205,8 @@ function FAQPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

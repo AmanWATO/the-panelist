@@ -5,6 +5,7 @@ import { colors, fonts } from "@/utils/theme";
 import { Trophy, Calendar, Users, Award, Clock, Star, Gift } from "lucide-react";
 import { useEffect, useState } from "react";
 import EarlyAccessForm from "@/components/ui/early-access-form";
+import Script from "next/script";
 
 export default function ContestPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -14,6 +15,33 @@ export default function ContestPage() {
     seconds: 0
   });
   const [showForm, setShowForm] = useState(false);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "One Wonder Frame",
+    "description": "Our inaugural art contest celebrating single-panel art and minimalist storytelling. When everyone draws noise, draw silence.",
+    "startDate": "2025-08-11T00:00:00",
+    "endDate": "2025-09-11T23:59:59",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://thepanelist.com/contest"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "The Panelist",
+      "url": "https://thepanelist.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "image": "https://thepanelist.com/the_panelist.png"
+  };
 
   useEffect(() => {
     const targetDate = new Date('2025-08-11T00:00:00').getTime();
@@ -58,7 +86,15 @@ export default function ContestPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="contest-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
         <div className="max-w-4xl mx-auto text-center">
@@ -285,6 +321,7 @@ export default function ContestPage() {
       </section>
 
       <EarlyAccessForm isOpen={showForm} onClose={() => setShowForm(false)} />
-    </div>
+      </div>
+    </>
   );
 }

@@ -4,10 +4,32 @@
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { Shield } from "lucide-react";
+import Script from "next/script";
 
 function PrivacyPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy",
+    "description": "The Panelist's privacy policy outlining how we collect, use, and protect user information.",
+    "url": "https://thepanelist.com/privacy",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Panelist"
+    },
+    "dateModified": "2025-01-01"
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="privacy-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section
         className="py-16 px-4 sm:px-6"
@@ -204,7 +226,8 @@ function PrivacyPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -5,10 +5,40 @@ import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { Users, Award, Palette, Star } from "lucide-react";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function ArtistsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Artist Panel Exhibition",
+    "description": "Discover our curated collection of single-panel artists. When you apply for our panel exhibition program, your work will be featured here for our growing community to appreciate and connect with.",
+    "url": "https://thepanelist.com/artists",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Featured Artists",
+      "description": "Curated collection of exceptional single-panel artists"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Panelist",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thepanelist.com/the_panelist.png"
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="artists-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundColor: colors.background }}>
         {/* Background Elements */}
@@ -222,6 +252,7 @@ export default function ArtistsPage() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { Brush, Eye, Heart, Sparkles, Quote, Pause, Layers, Target } from "lucide-react";
+import Script from "next/script";
 
 function ManifestoPage() {
   const principles = [
@@ -24,8 +25,40 @@ function ManifestoPage() {
     }
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Panelist Manifesto",
+    "description": "A declaration of our commitment to the art of restraint, the beauty of minimalism, and the power of a single frame.",
+    "author": {
+      "@type": "Organization",
+      "name": "The Panelist"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Panelist",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://thepanelist.com/the_panelist.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://thepanelist.com/manifesto"
+    },
+    "articleSection": "Philosophy"
+  };
+
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <Script
+        id="manifesto-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section
         className="py-16 px-4 sm:px-6"
@@ -207,7 +240,8 @@ function ManifestoPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 
