@@ -70,18 +70,18 @@ const BlogPreview = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {featuredPosts.map((post, index) => (
             <Link href={`/blog/${post.id}`} key={post.id}>
               <motion.article
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -97,8 +97,8 @@ const BlogPreview = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-6">
-                <div className="flex items-center space-x-4 mb-3 text-xs text-[#6B5B4F]">
+              <div className="p-4 sm:p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 mb-3 text-xs text-[#6B5B4F]">
                   <div className="flex items-center space-x-1">
                     <Calendar className="w-3 h-3" />
                     <span>{new Date(post.date).toLocaleDateString()}</span>
@@ -110,14 +110,14 @@ const BlogPreview = () => {
                 </div>
 
                 <h3
-                  className="text-lg font-bold mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
+                  className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
                   style={{ fontFamily: fonts.heading }}
                 >
                   {post.title}
                 </h3>
 
                 <p
-                  className="text-[#6B5B4F] text-sm mb-4 leading-relaxed line-clamp-2"
+                  className="text-[#6B5B4F] text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-2"
                   style={{ fontFamily: fonts.body }}
                 >
                   {post.excerpt}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -156,7 +155,7 @@ const PanelApplication = () => {
             >
               Apply to Become a Panelist
             </h3>
-            
+
             {isSubmitted ? (
               <motion.div
                 className="text-center py-8"
@@ -192,7 +191,7 @@ const PanelApplication = () => {
                     style={{ fontFamily: fonts.body }}
                   />
                 </div>
-                
+
                 <motion.button
                   type="submit"
                   className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-3"
@@ -205,7 +204,7 @@ const PanelApplication = () => {
                 </motion.button>
               </form>
             )}
-            
+
             <p
               className="text-xs text-[#6B5B4F] text-center mt-4"
               style={{ fontFamily: fonts.body }}

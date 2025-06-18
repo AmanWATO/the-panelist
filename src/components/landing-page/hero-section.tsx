@@ -103,7 +103,7 @@ const HeroSection = () => {
 
         {/* Main Heading */}
         <motion.h1
-          className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-[#2C1810] via-[#8B2635] to-[#D4A574] bg-clip-text text-transparent leading-tight"
+          className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-[#2C1810] via-[#8B2635] to-[#D4A574] bg-clip-text text-transparent leading-tight px-2"
           style={{ fontFamily: fonts.heading }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <motion.p
-          className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-12 text-[#6B5B4F] max-w-3xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 lg:mb-12 text-[#6B5B4F] max-w-3xl mx-auto leading-relaxed px-4"
           style={{ fontFamily: fonts.body }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -140,14 +140,14 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
           <motion.button
             onClick={() => setShowForm(true)}
-            className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-xl transition-all duration-300 flex items-center space-x-3 group"
+            className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-medium hover:shadow-xl transition-all duration-300 flex items-center space-x-2 sm:space-x-3 group w-full sm:w-auto justify-center"
             style={{ fontFamily: fonts.button }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -156,7 +156,7 @@ const HeroSection = () => {
               animate={{ rotate: [0, 15, -15, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Bell className="w-5 h-5" />
+              <Bell className="w-4 h-4 sm:w-5 sm:h-5" />
             </motion.div>
             <span>Join the Movement</span>
             <motion.div
@@ -164,7 +164,7 @@ const HeroSection = () => {
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             </motion.div>
           </motion.button>
         </motion.div>

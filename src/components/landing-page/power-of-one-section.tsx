@@ -29,11 +29,11 @@ const PowerOfOneSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="text-center p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
+              className="text-center p-6 sm:p-8 rounded-xl sm:rounded-2xl hover:shadow-lg transition-all duration-300"
               style={{ backgroundColor: colors.card }}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -42,16 +42,16 @@ const PowerOfOneSection = () => {
               whileHover={{ y: -5 }}
             >
               <motion.div
-                className="w-16 h-16 mx-auto mb-6 bg-[#6E1A2C] rounded-full flex items-center justify-center"
+                className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-[#6E1A2C] rounded-full flex items-center justify-center"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ duration: 0.3 }}
               >
-                <feature.icon className="w-8 h-8 text-white" />
+                <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-4 text-[#1E1E1E]" style={{ fontFamily: fonts.heading }}>
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-[#1E1E1E]" style={{ fontFamily: fonts.heading }}>
                 {feature.title}
               </h3>
-              <p className="text-[#7A7A7A]" style={{ fontFamily: fonts.body }}>
+              <p className="text-sm sm:text-base text-[#7A7A7A]" style={{ fontFamily: fonts.body }}>
                 {feature.desc}
               </p>
             </motion.div>
