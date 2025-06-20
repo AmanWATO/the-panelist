@@ -129,7 +129,7 @@ const BlogNewsletter = () => {
                 Welcome to the Community!
               </h3>
               <p className="text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
-                You'll receive our next story in your inbox soon.
+                {`You'll receive our next story in your inbox soon.`}
               </p>
             </motion.div>
           )}

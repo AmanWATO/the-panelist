@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
-import { BookOpen, Feather, Sparkles } from "lucide-react";
+import { BookOpen, Feather,  } from "lucide-react";
 
 const BlogHero = () => {
   return (
@@ -92,7 +92,7 @@ const BlogHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {["Art Philosophy", "Artist Spotlights", "Creative Process", "Community Stories"].map((tag, index) => (
+          {["Art Philosophy", "Artist Spotlights", "Creative Process", "Community Stories"].map((tag) => (
             <motion.span
               key={tag}
               className="px-4 py-2 bg-gradient-to-r from-[#8B2635]/10 to-[#D4A574]/10 text-[#8B2635] rounded-full border border-[#8B2635]/20"
