@@ -27,11 +27,16 @@ export const metadata: Metadata = {
   title: "The Panelist - Where Art Speaks in Silence",
   description:
     "A one-frame art and caption platform celebrating visual subtlety and creative storytelling. Join the quiet revolution.",
-  keywords: "art, single panel, minimalist, visual storytelling, creative platform",
+  keywords:
+    "art, single panel, minimalist, visual storytelling, creative platform",
   openGraph: {
     title: "The Panelist - Where Art Speaks in Silence",
-    description: "A one-frame art and caption platform celebrating visual subtlety and creative storytelling.",
+    description:
+      "A one-frame art and caption platform celebrating visual subtlety and creative storytelling.",
     type: "website",
+  },
+  icons: {
+    icon: `/the_panelist.png`,
   },
 };
 
@@ -43,29 +48,29 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "The Panelist",
-    "description": "A curated platform for single-panel art and minimalist visual storytelling. Where art speaks in silence.",
-    "url": "https://thepanelist.com",
-    "logo": "https://thepanelist.com/the_panelist.png",
-    "sameAs": [
-      "https://instagram.com/thepanelist"
-    ],
-    "publisher": {
+    name: "The Panelist",
+    description:
+      "The Panelist is a curated stage for single-panel visual art and minimalist storytelling—where meaning is whispered in stillness and stories unfold in a single frame.",
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    inLanguage: "en",
+    genre: "Art, Minimalism, Visual Storytelling",
+    sameAs: ["https://instagram.com/thepanelist.art"],
+    publisher: {
       "@type": "Organization",
-      "name": "The Panelist",
-      "logo": {
+      name: "The Panelist",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://thepanelist.com/the_panelist.png"
-      }
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://thepanelist.com/search?q={search_term_string}"
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/the_panelist.png`,
       },
-      "query-input": "required name=search_term_string"
-    }
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${process.env.NEXT_PUBLIC_SITE_URL}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (

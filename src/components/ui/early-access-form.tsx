@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, User, Palette, Send } from "lucide-react";
 import { useState } from "react";
-import { colors, fonts } from "@/utils/theme";
+import {  fonts } from "@/utils/theme";
 
 interface EarlyAccessFormProps {
   isOpen: boolean;
@@ -93,7 +93,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 hover:bg-[#F8F5F0] rounded-lg transition-colors"
+                  className="p-2 cursor-pointer hover:bg-[#F8F5F0] rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5 text-[#6B5B4F]" />
                 </button>
@@ -187,7 +187,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                   <motion.button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-2.5 rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 disabled:opacity-50"
+                    className="w-full cursor-pointer bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-2.5 rounded-lg font-medium flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300 disabled:opacity-50"
                     style={{ fontFamily: fonts.button }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -230,7 +230,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                     Welcome to the Movement!
                   </h3>
                   <p className="text-[#6B5B4F]" style={{ fontFamily: fonts.body }}>
-                    You'll be the first to know when we launch.
+                    {`You'll be the first to know when we launch.`}
                   </p>
                 </motion.div>
               )}

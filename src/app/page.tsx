@@ -1,6 +1,6 @@
-import ComingSoonSection from "@/components/landing-page/coming-soon";
+// import ComingSoonSection from "@/components/landing-page/coming-soon";
 import HeroSection from "@/components/landing-page/hero-section";
-import JoinMovementSection from "@/components/landing-page/join-movement";
+// import JoinMovementSection from "@/components/landing-page/join-movement";
 import PhilosophySection from "@/components/landing-page/philosophy-section";
 import PowerOfOneSection from "@/components/landing-page/power-of-one-section";
 import BlogPreview from "@/components/landing-page/blog-preview";
@@ -14,8 +14,8 @@ export default function Home() {
       <PowerOfOneSection />
       <PanelApplication />
       <BlogPreview />
-      <ComingSoonSection />
-      <JoinMovementSection />
+      {/* <ComingSoonSection /> */}
+      {/* <JoinMovementSection /> */}
     </div>
   );
 }

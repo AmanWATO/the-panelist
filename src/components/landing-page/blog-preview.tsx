@@ -5,40 +5,14 @@ import { colors, fonts } from "@/utils/theme";
 import { ArrowRight, BookOpen, Calendar, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { featuredPosts } from "@/utils/blogLandingPage";
 
 const BlogPreview = () => {
-  const featuredPosts = [
-    {
-      id: 1,
-      title: "The Philosophy of Single-Panel Art",
-      excerpt: "Why one frame holds more power than a thousand words.",
-      date: "2025-01-15",
-      readTime: "5 min read",
-      image: "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=600",
-      category: "Philosophy"
-    },
-    {
-      id: 2,
-      title: "One Wonder Frame Competition",
-      excerpt: "Join our art competition on August 11th and showcase your talent.",
-      date: "2025-01-12",
-      readTime: "8 min read",
-      image: "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&w=600",
-      category: "Competition"
-    },
-    {
-      id: 3,
-      title: "The Art of Layered Captions",
-      excerpt: "Writing captions that add depth without overwhelming.",
-      date: "2025-01-10",
-      readTime: "6 min read",
-      image: "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg?auto=compress&cs=tinysrgb&w=600",
-      category: "Technique"
-    }
-  ];
-
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
+    <section
+      className="py-16 sm:py-20 px-4 sm:px-6"
+      style={{ backgroundColor: colors.background }}
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="text-center mb-12 sm:mb-16"
@@ -66,13 +40,14 @@ const BlogPreview = () => {
             className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
             style={{ fontFamily: fonts.body }}
           >
-            Dive deeper into the philosophy and practice of minimalist art. Discover the stories behind the silence.
+            Dive deeper into the philosophy and practice of minimalist art.
+            Discover the stories behind the silence.
           </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
           {featuredPosts.map((post, index) => (
-            <Link href={`/blog/${post.id}`} key={post.id}>
+            <Link href={`/blog/${post.slug}`} key={post.id}>
               <motion.article
                 className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 initial={{ opacity: 0, y: 30 }}
@@ -81,56 +56,56 @@ const BlogPreview = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-              <div className="relative h-40 sm:h-48 overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-[#D4A574]/90 text-[#2C1810] px-3 py-1 rounded-full text-xs font-medium">
-                    {post.category}
-                  </span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              <div className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 mb-3 text-xs text-[#6B5B4F]">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-3 h-3" />
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                <div className="relative h-40 sm:h-48 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#D4A574]/90 text-[#2C1810] px-3 py-1 rounded-full text-xs font-medium">
+                      {post.category}
+                    </span>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-3 h-3" />
-                    <span>{post.readTime}</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                <h3
-                  className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
-                  style={{ fontFamily: fonts.heading }}
-                >
-                  {post.title}
-                </h3>
+                <div className="p-4 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 mb-3 text-xs text-[#6B5B4F]">
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-3 h-3" />
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-3 h-3" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
 
-                <p
-                  className="text-[#6B5B4F] text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-2"
-                  style={{ fontFamily: fonts.body }}
-                >
-                  {post.excerpt}
-                </p>
+                  <h3
+                    className="text-base sm:text-lg font-bold mb-2 sm:mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
+                    style={{ fontFamily: fonts.heading }}
+                  >
+                    {post.title}
+                  </h3>
 
-                <motion.div
-                  className="flex items-center text-[#8B2635] font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity"
-                  whileHover={{ x: 5 }}
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </motion.div>
-              </div>
+                  <p
+                    className="text-[#6B5B4F] text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-2"
+                    style={{ fontFamily: fonts.body }}
+                  >
+                    {post.excerpt}
+                  </p>
+
+                  <motion.div
+                    className="flex items-center text-[#8B2635] font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </motion.div>
+                </div>
               </motion.article>
             </Link>
           ))}

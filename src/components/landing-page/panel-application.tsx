@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
-import { Award, Calendar, Trophy, Sparkles } from "lucide-react";
+import { Award, Trophy, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const PanelApplication = () => {
@@ -20,22 +20,28 @@ const PanelApplication = () => {
     {
       icon: Award,
       title: "Permanent Exhibition",
-      description: "Your selected panels will be permanently featured on our artist panel section"
+      description:
+        "Your selected panels will be permanently featured on our artist panel section",
     },
     {
       icon: Trophy,
       title: "Panelist Status",
-      description: "Become a recognized member of The Panelist artist community"
+      description:
+        "Become a recognized member of The Panelist artist community",
     },
     {
       icon: Sparkles,
       title: "Ongoing Exposure",
-      description: "Continuous showcase of your work to our growing art-loving audience"
-    }
+      description:
+        "Continuous showcase of your work to our growing art-loving audience",
+    },
   ];
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundColor: colors.card }}>
+    <section
+      className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
+      style={{ backgroundColor: colors.card }}
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {Array.from({ length: 15 }, (_, i) => (
@@ -70,9 +76,9 @@ const PanelApplication = () => {
         >
           <motion.div
             className="w-20 h-20 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-2xl flex items-center justify-center mx-auto mb-8"
-            animate={{ 
+            animate={{
               rotate: [0, 5, -5, 0],
-              scale: [1, 1.05, 1]
+              scale: [1, 1.05, 1],
             }}
             transition={{ duration: 4, repeat: Infinity }}
           >
@@ -90,7 +96,9 @@ const PanelApplication = () => {
             className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
             style={{ fontFamily: fonts.body }}
           >
-            Join our curated community of single-panel artists. Submit your work to be featured as a permanent panelist and showcase your art to our growing audience.
+            Join our curated community of single-panel artists. Submit your work
+            to be featured as a permanent panelist and showcase your art to our
+            growing audience.
           </p>
 
           <motion.div
@@ -99,7 +107,10 @@ const PanelApplication = () => {
             transition={{ duration: 2, repeat: Infinity }}
           >
             <Sparkles className="w-5 h-5 text-[#8B2635]" />
-            <span className="text-[#8B2635] font-medium" style={{ fontFamily: fonts.body }}>
+            <span
+              className="text-[#8B2635] font-medium"
+              style={{ fontFamily: fonts.body }}
+            >
               Rolling Applications - Apply Anytime
             </span>
           </motion.div>
@@ -166,8 +177,11 @@ const PanelApplication = () => {
                 <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <p className="text-lg font-medium text-green-600" style={{ fontFamily: fonts.body }}>
-                  Thank you! We'll notify you when submissions open.
+                <p
+                  className="text-lg font-medium text-green-600"
+                  style={{ fontFamily: fonts.body }}
+                >
+                  {`Thank you! We'll notify you when submissions open.`}
                 </p>
               </motion.div>
             ) : (
@@ -209,7 +223,8 @@ const PanelApplication = () => {
               className="text-xs text-[#6B5B4F] text-center mt-4"
               style={{ fontFamily: fonts.body }}
             >
-              We'll email you with application guidelines and submission process details.
+             {`We'll email you with application guidelines and submission process
+              details.`}
             </p>
           </div>
         </motion.div>

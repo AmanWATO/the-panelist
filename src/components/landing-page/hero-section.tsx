@@ -12,7 +12,7 @@ const HeroSection = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   const [showForm, setShowForm] = useState(false);
 
-  const floatingElements = Array.from({ length: 12 }, (_, i) => ({
+  const floatingElements = Array.from({ length: 25 }, (_, i) => ({
     id: i,
     size: Math.random() * 8 + 4,
     x: Math.random() * 100,
@@ -26,7 +26,6 @@ const HeroSection = () => {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
       style={{ backgroundColor: colors.background }}
     >
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {floatingElements.map((element) => (
           <motion.div
@@ -55,14 +54,12 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-[#8B2635]/5" />
 
       <motion.div
         className="text-center max-w-5xl mx-auto px-4 sm:px-6 relative z-10"
         style={{ y, opacity }}
       >
-        {/* Logo Animation */}
         <motion.div
           className="mb-8 sm:mb-12"
           initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
@@ -101,7 +98,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Main Heading */}
         <motion.h1
           className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 bg-gradient-to-r from-[#2C1810] via-[#8B2635] to-[#D4A574] bg-clip-text text-transparent leading-tight px-2"
           style={{ fontFamily: fonts.heading }}
@@ -120,7 +116,6 @@ const HeroSection = () => {
           </motion.span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 lg:mb-12 text-[#6B5B4F] max-w-3xl mx-auto leading-relaxed px-4"
           style={{ fontFamily: fonts.body }}
@@ -138,7 +133,6 @@ const HeroSection = () => {
           </motion.span>
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
           initial={{ opacity: 0, y: 30 }}
@@ -169,9 +163,8 @@ const HeroSection = () => {
           </motion.button>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        {/* <motion.div
+          className="absolute top-[25%] -translate-y-[25%] left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
@@ -187,7 +180,7 @@ const HeroSection = () => {
               transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Early Access Form Modal */}

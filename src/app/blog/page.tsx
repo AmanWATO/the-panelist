@@ -5,28 +5,33 @@ import Script from "next/script";
 
 export const metadata = {
   title: "Blog - The Panelist",
-  description: "Insights, stories, and inspiration from the world of single-panel art and minimalist storytelling.",
+  description:
+    "Insights, stories, and inspiration from the world of single-panel art and minimalist storytelling.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+  },
 };
 
 export default function BlogPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "The Panelist Blog",
-    "description": "Insights, stories, and inspiration from the world of single-panel art and minimalist storytelling.",
-    "url": "https://thepanelist.com/blog",
-    "publisher": {
+    name: "The Panelist Blog",
+    description:
+      "Insights, stories, and inspiration from the world of single-panel art and minimalist storytelling.",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+    publisher: {
       "@type": "Organization",
-      "name": "The Panelist",
-      "logo": {
+      name: "The Panelist",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://thepanelist.com/the_panelist.png"
-      }
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/the_panelist.png`,
+      },
     },
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://thepanelist.com/blog"
-    }
+      "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+    },
   };
 
   return (

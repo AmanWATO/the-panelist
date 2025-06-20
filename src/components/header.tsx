@@ -6,9 +6,11 @@ import { Menu, X, Feather, Palette } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import EarlyAccessForm from "./ui/early-access-form";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const navItems = [
     { name: "Philosophy", href: "/philosophy" },
@@ -76,13 +78,14 @@ const Header = () => {
             </motion.div>
           ))}
           <motion.button
-            className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 font-medium flex items-center space-x-2"
+            className="bg-gradient-to-r cursor-pointer from-[#8B2635] to-[#A52A3A] text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all duration-300 font-medium flex items-center space-x-2"
             style={{ fontFamily: fonts.button }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setShowForm(true)}
           >
             <Feather className="w-4 h-4" />
             <span>Join Early</span>
@@ -148,7 +151,10 @@ const Header = () => {
                     <div className="w-8 h-8 border-2 border-[#8B2635] rounded-lg flex items-center justify-center">
                       <Palette className="w-5 h-5 text-[#8B2635]" />
                     </div>
-                    <span className="text-lg sm:text-xl font-bold text-[#2C1810]" style={{ fontFamily: fonts.heading }}>
+                    <span
+                      className="text-lg sm:text-xl font-bold text-[#2C1810]"
+                      style={{ fontFamily: fonts.heading }}
+                    >
                       The Panelist
                     </span>
                   </Link>
@@ -180,6 +186,8 @@ const Header = () => {
           </>
         )}
       </AnimatePresence>
+
+      <EarlyAccessForm isOpen={showForm} onClose={() => setShowForm(false)} />
     </motion.header>
   );
 };
