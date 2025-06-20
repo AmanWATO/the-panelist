@@ -4,16 +4,28 @@ import { motion } from "framer-motion";
 import { colors, fonts } from "@/utils/theme";
 import { Award, Trophy, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const PanelApplication = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setEmail("");
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    try {
+      await addDoc(collection(db, "panelist"), {
+        email: email.trim(),
+        submittedAt: serverTimestamp(),
+      });
+      setIsSubmitted(true);
+      setEmail("");
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error) {
+      console.error("Failed to submit panelist application:", error);
+      alert("Oops! Something went wrong. Please try again.");
+    }
   };
 
   const features = [
@@ -41,6 +53,7 @@ const PanelApplication = () => {
     <section
       className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
       style={{ backgroundColor: colors.card }}
+      id="panel-application"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -199,7 +212,7 @@ const PanelApplication = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border border-[#8B2635]/20 rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all duration-300 bg-white/50 backdrop-blur-sm"
+                   className="w-full pl-4 pr-4 py-2.5 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-[#8B2635] focus:outline-none transition-all text-[#2C1810] placeholder-[#9B8B7F]"
                     placeholder="your.email@example.com"
                     required
                     style={{ fontFamily: fonts.body }}
@@ -223,7 +236,7 @@ const PanelApplication = () => {
               className="text-xs text-[#6B5B4F] text-center mt-4"
               style={{ fontFamily: fonts.body }}
             >
-             {`We'll email you with application guidelines and submission process
+              {`We'll email you with application guidelines and submission process
               details.`}
             </p>
           </div>
