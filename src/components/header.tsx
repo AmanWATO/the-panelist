@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 bg-[#FEFCF8]`}
+      className={`fixed top-0 left-0 right-0 z-50 px-5 sm:px-6 py-3 sm:py-4 transition-all duration-300 bg-[#FEFCF8]`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -37,8 +37,8 @@ const Header = () => {
               <Image
                 src="/the_panelist.png"
                 alt="The Panelist Logo"
-                width={40}
-                height={40}
+                width={50}
+                height={50}
                 className="sm:w-12 sm:h-12 rounded-lg shadow-lg"
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -172,7 +172,7 @@ const Header = () => {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block py-3 px-4 text-base sm:text-lg font-medium text-[#2C1810] hover:bg-[#F8F5F0] rounded-lg transition-colors"
+                        className="block py-3 px-5 text-base sm:text-lg font-medium text-[#2C1810] hover:bg-[#F8F5F0] rounded-lg transition-colors"
                         style={{ fontFamily: fonts.body }}
                         onClick={() => setIsMenuOpen(false)}
                       >

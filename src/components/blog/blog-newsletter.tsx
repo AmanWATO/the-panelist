@@ -26,12 +26,12 @@ const BlogNewsletter = () => {
 
   return (
     <section 
-      className="py-16 px-4 sm:px-6" 
+      className="py-16 max-md:py-14 px-5 sm:px-6" 
       style={{ backgroundColor: colors.background }}
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="bg-gradient-to-br from-[#8B2635]/5 to-[#D4A574]/5 rounded-3xl p-8 sm:p-12 text-center border border-[#8B2635]/10"
+          className="bg-gradient-to-br from-[#8B2635]/5 to-[#D4A574]/5 rounded-3xl p-6 sm:p-12 text-center border border-[#8B2635]/10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -76,7 +76,7 @@ const BlogNewsletter = () => {
                     placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 border-2 border-[#E8E0D6] rounded-full focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all bg-white placeholder-[#6B5B4F]"
+                    className="w-full pl-12 pr-4 py-3 border-2 border-[#E8E0D6] text-black rounded-full focus:ring-2 focus:ring-[#8B2635] focus:border-transparent transition-all bg-white placeholder-black"
                     style={{ fontFamily: fonts.body }}
                     required
                   />
@@ -134,7 +134,7 @@ const BlogNewsletter = () => {
             </motion.div>
           )}
 
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-[#6B5B4F]">
+          <div className="flex flex-wrap justify-center gap-6 mt-8 max-md:mt-6 max-md:gap-4 text-sm text-[#6B5B4F]">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-[#8B2635] rounded-full"></div>
               <span>Weekly stories</span>

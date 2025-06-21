@@ -43,7 +43,7 @@ export default function BlogPage() {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen max-md:pt-10 pt-20">
         <BlogHero />
         <BlogGrid />
         <BlogNewsletter />

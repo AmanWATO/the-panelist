@@ -8,10 +8,10 @@ import { Instagram, Mail } from "lucide-react";
 const Footer = () => {
   return (
     <footer
-      className="py-16 px-6 border-t border-[#6E1A2C]/20"
+      className="py-16 max-md:py-14 max-md:px-5 px-6 border-t border-[#6E1A2C]/20"
       style={{ backgroundColor: colors.card }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16 max-md:gap-10">
         {/* Left: Logo & Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ const Footer = () => {
 
           <div className="flex items-center space-x-4 mt-2">
             <a
-              href="https://instagram.com/YOUR_INSTAGRAM_HANDLE"
+              href="https://instagram.com/thepanelist.art"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#7A7A7A] hover:text-[#6E1A2C] transition-colors"

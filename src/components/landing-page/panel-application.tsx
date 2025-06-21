@@ -51,7 +51,7 @@ const PanelApplication = () => {
 
   return (
     <section
-      className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
+      className="py-12 max-md:px-5 sm:py-20 px-5 sm:px-6 relative overflow-hidden"
       style={{ backgroundColor: colors.card }}
       id="panel-application"
     >
@@ -79,9 +79,9 @@ const PanelApplication = () => {
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl max-md:w-full mx-auto relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 max-md:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -99,14 +99,14 @@ const PanelApplication = () => {
           </motion.div>
 
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
+            className="text-3xl max-md:text-left sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
             style={{ fontFamily: fonts.heading }}
           >
             Become a Panelist Artist
           </h2>
 
           <p
-            className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
+            className="text-lg max-md:text-left sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
             style={{ fontFamily: fonts.body }}
           >
             Join our curated community of single-panel artists. Submit your work
@@ -115,13 +115,13 @@ const PanelApplication = () => {
           </p>
 
           <motion.div
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#8B2635]/10 to-[#D4A574]/10 px-6 py-3 rounded-full border border-[#8B2635]/20"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#8B2635]/10 to-[#D4A574]/10 px-6 py-3 max-md:px-5 max-md:py-5 rounded-full border border-[#8B2635]/20"
             animate={{ opacity: [0.8, 1, 0.8] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             <Sparkles className="w-5 h-5 text-[#8B2635]" />
             <span
-              className="text-[#8B2635] font-medium"
+              className="text-[#8B2635] max-md:text-sm font-medium"
               style={{ fontFamily: fonts.body }}
             >
               Rolling Applications - Apply Anytime
@@ -130,11 +130,11 @@ const PanelApplication = () => {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16 max-md:mb-10">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="text-center p-8 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg"
+              className="text-center p-8 max-md:p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -149,13 +149,13 @@ const PanelApplication = () => {
                 <feature.icon className="w-8 h-8 text-white" />
               </motion.div>
               <h3
-                className="text-xl font-bold mb-4 text-[#2C1810]"
+                className="text-xl font-bold mb-4 max-md:mb-2 text-[#2C1810]"
                 style={{ fontFamily: fonts.heading }}
               >
                 {feature.title}
               </h3>
               <p
-                className="text-[#6B5B4F] leading-relaxed"
+                className="text-[#6B5B4F] max-md:text-sm leading-relaxed"
                 style={{ fontFamily: fonts.body }}
               >
                 {feature.description}
@@ -166,15 +166,15 @@ const PanelApplication = () => {
 
         {/* Application Form */}
         <motion.div
-          className="max-w-2xl mx-auto"
+          className="max-w-2xl max-md:w-full mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white/60 backdrop-blur-sm border border-white/20 rounded-3xl p-8 sm:p-12 shadow-xl">
+          <div className="bg-white/60 backdrop-blur-sm border border-white/20 rounded-3xl p-8 max-md:p-4 sm:p-12 shadow-xl">
             <h3
-              className="text-2xl font-bold mb-6 text-center text-[#2C1810]"
+              className="text-2xl max-md:text-xl font-bold mb-6 text-center text-[#2C1810]"
               style={{ fontFamily: fonts.heading }}
             >
               Apply to Become a Panelist
@@ -221,7 +221,7 @@ const PanelApplication = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-3"
+                  className="w-full bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white py-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-3 max-md:space-x-2 max-md:py-3" 
                   style={{ fontFamily: fonts.button }}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}

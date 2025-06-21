@@ -7,12 +7,12 @@ import { BookOpen, Feather,  } from "lucide-react";
 const BlogHero = () => {
   return (
     <section
-      className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
+      className="py-12 sm:py-20 px-5 sm:px-6 relative overflow-hidden"
       style={{ backgroundColor: colors.background }}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 20 }, (_, i) => (
+        {Array.from({ length: 36 }, (_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-[#8B2635] rounded-full opacity-10"
@@ -35,7 +35,7 @@ const BlogHero = () => {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
-          className="mb-8"
+          className="mb-8 max-md:mb-5"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
@@ -95,7 +95,7 @@ const BlogHero = () => {
           {["Art Philosophy", "Artist Spotlights", "Creative Process", "Community Stories"].map((tag) => (
             <motion.span
               key={tag}
-              className="px-4 py-2 bg-gradient-to-r from-[#8B2635]/10 to-[#D4A574]/10 text-[#8B2635] rounded-full border border-[#8B2635]/20"
+              className="px-5 py-2 bg-gradient-to-r from-[#8B2635]/10 to-[#D4A574]/10 text-[#8B2635] rounded-full border border-[#8B2635]/20"
               style={{ fontFamily: fonts.body }}
               whileHover={{ scale: 1.05, backgroundColor: "#8B2635", color: "white" }}
               transition={{ duration: 0.2 }}

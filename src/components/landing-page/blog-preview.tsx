@@ -10,12 +10,12 @@ import { featuredPosts } from "@/utils/blogLandingPage";
 const BlogPreview = () => {
   return (
     <section
-      className="py-16 sm:py-20 px-4 sm:px-6"
+      className="py-12 sm:py-20 px-5 sm:px-6"
       style={{ backgroundColor: colors.background }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl max-md:w-full mx-auto">
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -30,14 +30,14 @@ const BlogPreview = () => {
           </motion.div>
 
           <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
+            className="text-3xl max-md:text-left sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#2C1810] to-[#8B2635] bg-clip-text text-transparent"
             style={{ fontFamily: fonts.heading }}
           >
             Stories & Insights
           </h2>
 
           <p
-            className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
+            className="text-lg max-md:text-left sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
             style={{ fontFamily: fonts.body }}
           >
             Dive deeper into the philosophy and practice of minimalist art.
@@ -73,7 +73,7 @@ const BlogPreview = () => {
                 </div>
 
                 <div className="p-4 sm:p-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 mb-3 text-xs text-[#6B5B4F]">
+                  <div className="flex flex-row items-center space-x-4  mb-3 text-xs text-[#6B5B4F]">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-3 h-3" />
                       <span>{new Date(post.date).toLocaleDateString()}</span>
@@ -120,7 +120,7 @@ const BlogPreview = () => {
         >
           <Link href="/blog">
             <motion.button
-              className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center space-x-3 mx-auto"
+              className="bg-gradient-to-r from-[#8B2635] to-[#A52A3A] text-white px-8 py-4 max-md:py-3 max-md:px-6 max-md:space-x-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center space-x-3 mx-auto"
               style={{ fontFamily: fonts.button }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

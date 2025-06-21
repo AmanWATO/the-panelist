@@ -57,7 +57,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-[#8B2635]/5" />
 
       <motion.div
-        className="text-center max-w-5xl mx-auto px-4 sm:px-6 relative z-10"
+        className="text-center max-w-5xl mx-auto px-5 sm:px-6 relative z-10"
         style={{ y, opacity }}
       >
         <motion.div
@@ -117,7 +117,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 lg:mb-12 text-[#6B5B4F] max-w-3xl mx-auto leading-relaxed px-4"
+          className="text-base sm:text-lg lg:text-xl xl:text-2xl mb-6 sm:mb-8 lg:mb-12 text-[#6B5B4F] max-w-3xl mx-auto leading-relaxed px-5"
           style={{ fontFamily: fonts.body }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-5"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}

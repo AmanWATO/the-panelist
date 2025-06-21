@@ -48,15 +48,15 @@ export default function ContestPage() {
 
   return (
     <>
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen max-md:pt-10 pt-20">
         {/* Hero Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-14 px-5 sm:px-6"
           style={{ backgroundColor: colors.background }}
         >
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              className="w-24 h-24 mx-auto mb-8 relative"
+              className="w-24 h-24 mx-auto mb-8 max-md:mb-4 relative"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -79,7 +79,7 @@ export default function ContestPage() {
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8"
+              className="text-lg sm:text-xl text-[#6B5B4F] max-w-3xl mx-auto mb-8 max-md:mb-4"
               style={{ fontFamily: fonts.body }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function ContestPage() {
             </motion.p>
 
             <motion.blockquote
-              className="text-2xl lg:text-3xl italic mb-8 text-[#8B2635] max-w-3xl mx-auto"
+              className="text-2xl lg:text-3xl italic mb-8 max-md:mb-0 text-[#8B2635] max-w-3xl mx-auto"
               style={{ fontFamily: fonts.accent }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -103,7 +103,7 @@ export default function ContestPage() {
 
         {/* Countdown Timer */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-12 px-5 sm:px-6"
           style={{ backgroundColor: colors.card }}
         >
           <div className="max-w-4xl mx-auto">
@@ -128,7 +128,7 @@ export default function ContestPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mb-12">
+            <div className="grid grid-cols-4 sm:grid-cols-4 gap-1 sm:gap-8 max-md:mb-10 mb-12">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hours", value: timeLeft.hours },
@@ -184,12 +184,12 @@ export default function ContestPage() {
 
         {/* Prizes Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-12 px-5 sm:px-6"
           style={{ backgroundColor: colors.background }}
         >
           <div className="max-w-6xl mx-auto">
             <motion.div
-              className="text-center mb-12"
+              className="text-center max-md:mb-8 mb-12"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -210,7 +210,7 @@ export default function ContestPage() {
             </motion.div>
 
             <motion.div
-              className="text-center p-8 bg-white rounded-2xl shadow-lg max-w-2xl mx-auto"
+              className="text-center p-8 max-md:p-6 bg-white rounded-2xl shadow-lg max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -220,13 +220,13 @@ export default function ContestPage() {
                 <Trophy className="w-8 h-8 text-white" />
               </div>
               <h3
-                className="text-2xl font-bold mb-4 text-[#2C1810]"
+                className="text-2xl max-md:text-xl font-bold mb-4 text-[#2C1810]"
                 style={{ fontFamily: fonts.heading }}
               >
                 Recognition & Exhibition
               </h3>
               <p
-                className="text-[#6B5B4F] leading-relaxed"
+                className="text-[#6B5B4F] max-md:text-sm leading-relaxed"
                 style={{ fontFamily: fonts.body }}
               >
                 {`Selected works will be featured in our permanent exhibition,
@@ -272,12 +272,12 @@ export default function ContestPage() {
 
         {/* Rules Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-12 px-5 sm:px-6"
           style={{ backgroundColor: colors.card }}
         >
           <div className="max-w-4xl mx-auto">
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-12 max-md:mb-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -297,19 +297,19 @@ export default function ContestPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-md:gap-8">
               {rules.map((rule, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-3 p-4 rounded-lg"
+                  className="flex items-start max-md:items-center space-x-3 p-4 rounded-lg max-md:shadow-lg"
                   style={{ backgroundColor: colors.background }}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-6 h-6 bg-[#8B2635] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs font-bold">
+                  <div className="w-6 h-6 max-md:h-8 max-md:w-8 bg-[#8B2635] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-xs max-md:text-sm font-bold">
                       {index + 1}
                     </span>
                   </div>

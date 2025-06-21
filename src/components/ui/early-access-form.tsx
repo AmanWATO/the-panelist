@@ -96,7 +96,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 max-md:p-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -112,14 +112,14 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
 
           {/* Form Container */}
           <motion.div
-            className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto scrollbar-hide"
+            className="relative bg-white rounded-2xl shadow-2xl max-md:shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto scrollbar-hide"
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", bounce: 0.3 }}
           >
             {/* Header */}
-            <div className="p-6 border-b border-[#E8E0D6]">
+            <div className="p-6 max-md:p-5 border-b border-[#E8E0D6]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-lg flex items-center justify-center">
@@ -151,7 +151,7 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
             </div>
 
             {/* Form Content */}
-            <div className="p-6">
+            <div className="p-6 max-md:p-5">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Error Message */}
@@ -243,14 +243,20 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                           role: e.target.value,
                         }))
                       }
-                      className="w-full px-4 py-2.5 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-[#8B2635] focus:outline-none transition-all text-[#2C1810] bg-white"
+                      className="w-full px-5 py-2.5 pr-10 border border-[#E8E0D6] rounded-lg focus:ring-2 focus:ring-[#8B2635] focus:border-[#8B2635] focus:outline-none transition-all text-[#2C1810] bg-white appearance-none relative"
                       required
                       disabled={isLoading}
                       style={{ fontFamily: fonts.body }}
                     >
-                      <option value="" className="text-[#9B8B7F]">Select your role</option>
+                      <option value="" className="text-[#9B8B7F]">
+                        Select your role
+                      </option>
                       {roles.map((role) => (
-                        <option key={role} value={role} className="text-[#2C1810]">
+                        <option
+                          key={role}
+                          value={role}
+                          className="text-[#2C1810]"
+                        >
                           {role}
                         </option>
                       ))}
@@ -260,16 +266,16 @@ const EarlyAccessForm = ({ isOpen, onClose }: EarlyAccessFormProps) => {
                   {/* Interests */}
                   <div>
                     <label
-                      className="block text-sm font-medium text-[#2C1810] mb-3"
+                      className="block text-sm font-medium text-[#2C1810] mb-3 max-md:mb-2"
                       style={{ fontFamily: fonts.body }}
                     >
                       Interested in (select all that apply)
                     </label>
-                    <div className="grid grid-cols-1 gap-2">
+                    <div className="grid grid-cols-1 gap-2 max-md:gap-1">
                       {interests.map((interest) => (
                         <label
                           key={interest}
-                          className="flex items-center space-x-3 cursor-pointer hover:bg-[#F8F5F0] p-2 rounded-lg transition-colors"
+                          className="flex items-center space-x-3 max-md:p-1 cursor-pointer hover:bg-[#F8F5F0] p-2 rounded-lg transition-colors"
                         >
                           <input
                             type="checkbox"

@@ -8,24 +8,24 @@ const PhilosophySection = () => {
   return (
     <section
       id="philosophy"
-      className="py-20 px-6"
+      className="py-20 max-md:py-14 px-6 max-md:px-5"
       style={{ backgroundColor: colors.card }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl max-md:w-full mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 max-md:mb-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <h2
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#1E1E1E]"
+            className="text-3xl max-md:text-left md:text-6xl font-bold mb-6 text-[#1E1E1E]"
             style={{ fontFamily: fonts.heading }}
           >
             Not Just a Platform, A Perspective
           </h2>
-          <div className="w-24 h-1 bg-[#6E1A2C] mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-[#6E1A2C] mx-auto mb-8 max-md:mb-4"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -36,14 +36,14 @@ const PhilosophySection = () => {
             viewport={{ once: true }}
           >
             <blockquote
-              className="text-2xl md:text-3xl italic mb-8 text-[#6E1A2C]"
+              className="text-xl md:text-3xl italic mb-4 max-md:mb-6 text-[#6E1A2C]"
               style={{ fontFamily: fonts.heading }}
             >
               {`${"This is not a comic. It's not a meme. It's not a story. It's a suggestion of one."}`}
             </blockquote>
 
             <p
-              className="text-lg mb-6 text-[#7A7A7A] leading-relaxed"
+              className="text-lg max-md:text-base mb-6 max-md:mb-4 text-[#7A7A7A] leading-relaxed"
               style={{ fontFamily: fonts.body }}
             >
               In a world drowning in noise, we celebrate the whisper. The
@@ -53,7 +53,7 @@ const PhilosophySection = () => {
             </p>
 
             <p
-              className="text-lg text-[#7A7A7A] leading-relaxed"
+              className="text-lg max-md:text-base text-[#7A7A7A] leading-relaxed"
               style={{ fontFamily: fonts.body }}
             >
               We champion the art of layered captions, where words and images
@@ -62,7 +62,7 @@ const PhilosophySection = () => {
             </p>
 
             <motion.button
-              className="mt-8 text-[#6E1A2C] font-medium hover:underline flex items-center space-x-2"
+              className="mt-8 max-md:mt-4 text-[#6E1A2C] font-medium hover:underline flex items-center space-x-2"
               style={{ fontFamily: fonts.button }}
               whileHover={{ x: 5 }}
               onClick={() => (window.location.href = "/manifesto")}

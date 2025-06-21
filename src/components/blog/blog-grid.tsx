@@ -95,13 +95,13 @@ const BlogGrid = () => {
 
   return (
     <section
-      className="py-16 px-4 sm:px-6"
+      className="py-16 max-md:py-14 px-5 sm:px-6"
       style={{ backgroundColor: colors.card }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-12 max-md:gap-4 max-md:mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -110,7 +110,7 @@ const BlogGrid = () => {
           {categories.map((category, index) => (
             <motion.button
               key={category}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full max-md:rounded-lg text-sm max-md:px-3 font-medium transition-all duration-300 ${
                 index === 0
                   ? "bg-[#8B2635] text-white"
                   : "bg-white text-[#6B5B4F] hover:bg-[#8B2635] hover:text-white"
@@ -126,7 +126,7 @@ const BlogGrid = () => {
 
         {/* Featured Post */}
         <motion.div
-          className="mb-16"
+          className="mb-16 max-md:mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -149,8 +149,8 @@ const BlogGrid = () => {
                     </span>
                   </div>
                 </div>
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 mb-4 text-sm text-[#6B5B4F]">
+                <div className="p-5 lg:p-12 flex flex-col justify-center">
+                  <div className="flex items-center space-x-4 max-md:space-x-5 mb-4 text-sm text-[#6B5B4F]">
                     <span className="bg-[#D4A574]/20 text-[#8B2635] px-3 py-1 rounded-full font-medium">
                       {blogPosts[0].category}
                     </span>
@@ -166,13 +166,13 @@ const BlogGrid = () => {
                     </div>
                   </div>
                   <h2
-                    className="text-2xl lg:text-3xl font-bold mb-4 text-[#2C1810] group-hover:text-[#8B2635] transition-colors"
+                    className="text-xl lg:text-3xl font-bold mb-4 max-md:mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors"
                     style={{ fontFamily: fonts.heading }}
                   >
                     {blogPosts[0].title}
                   </h2>
                   <p
-                    className="text-[#6B5B4F] mb-6 leading-relaxed"
+                    className="text-[#6B5B4F] max-md:text-sm mb-6 max-md:mb-4 leading-relaxed"
                     style={{ fontFamily: fonts.body }}
                   >
                     {blogPosts[0].excerpt}
@@ -219,7 +219,7 @@ const BlogGrid = () => {
                   </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 max-md:p-5 flex flex-col flex-grow">
                   <div className="flex items-center space-x-4 mb-3 text-xs text-[#6B5B4F]">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-3 h-3" />
@@ -232,14 +232,14 @@ const BlogGrid = () => {
                   </div>
 
                   <h3
-                    className="text-lg font-bold mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
+                    className="text-lg max-md:text-base font-bold mb-3 text-[#2C1810] group-hover:text-[#8B2635] transition-colors line-clamp-2"
                     style={{ fontFamily: fonts.heading }}
                   >
                     {post.title}
                   </h3>
 
                   <p
-                    className="text-[#6B5B4F] text-sm mb-4 leading-relaxed flex-grow line-clamp-3"
+                    className="text-[#6B5B4F] text-sm mb-4 max-md:mb-3 leading-relaxed flex-grow line-clamp-3"
                     style={{ fontFamily: fonts.body }}
                   >
                     {post.excerpt}
@@ -247,10 +247,10 @@ const BlogGrid = () => {
 
                   <div className="flex items-center justify-end mt-auto">
                     <motion.div
-                      className="text-[#8B2635] opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="text-[#8B2635] md:opacity-0 group-hover:opacity-100 transition-opacity"
                       whileHover={{ x: 3 }}
                     >
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-4 h-4 max-md:h-6 max-md:w-6" />
                     </motion.div>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ const BlogGrid = () => {
 
         {/* Load More Button */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-12 max-md:mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

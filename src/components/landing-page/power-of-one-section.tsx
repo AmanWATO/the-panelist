@@ -25,25 +25,25 @@ const PowerOfOneSection = () => {
 
   return (
     <section
-      className="py-20 px-6"
+      className="py-20 max-md:py-14 max-md:px-5 px-6"
       style={{ backgroundColor: colors.background }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl max-md:w-ull mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 max-md:mb-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <h2
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#1E1E1E]"
+            className="text-3xl max-md:text-left md:text-6xl font-bold mb-6 text-[#1E1E1E]"
             style={{ fontFamily: fonts.heading }}
           >
             The Power of One
           </h2>
           <p
-            className="text-xl text-[#7A7A7A] max-w-3xl mx-auto"
+            className="text-xl max-md:text-lg max-md:text-left text-[#7A7A7A] max-w-3xl mx-auto"
             style={{ fontFamily: fonts.body }}
           >
             Why one panel? Because brevity is the soul of wit, and a single

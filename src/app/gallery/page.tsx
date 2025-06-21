@@ -22,7 +22,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
+      <section className="py-16 px-5 sm:px-6" style={{ backgroundColor: colors.background }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             className="w-20 h-20 bg-gradient-to-r from-[#8B2635] to-[#D4A574] rounded-2xl flex items-center justify-center mx-auto mb-8"
@@ -56,7 +56,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 px-4 sm:px-6" style={{ backgroundColor: colors.card }}>
+      <section className="py-8 px-5 sm:px-6" style={{ backgroundColor: colors.card }}>
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-2">
@@ -72,7 +72,7 @@ export default function GalleryPage() {
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   selectedCategory === category
                     ? "bg-[#8B2635] text-white"
                     : "bg-white text-[#6B5B4F] hover:bg-[#8B2635] hover:text-white"
@@ -89,7 +89,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 px-4 sm:px-6" style={{ backgroundColor: colors.background }}>
+      <section className="py-16 px-5 sm:px-6" style={{ backgroundColor: colors.background }}>
         <div className="max-w-6xl mx-auto">
           {filteredPanels.length === 0 ? (
             <motion.div

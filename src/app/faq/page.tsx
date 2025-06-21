@@ -91,7 +91,7 @@ function FAQPage() {
       <div className="min-h-screen pt-20">
         {/* Hero Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 px-5 sm:px-6"
           style={{ backgroundColor: colors.background }}
         >
           <div className="max-w-4xl mx-auto text-center">
@@ -129,7 +129,7 @@ function FAQPage() {
 
         {/* FAQ Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 px-5 sm:px-6"
           style={{ backgroundColor: colors.card }}
         >
           <div className="max-w-4xl mx-auto">

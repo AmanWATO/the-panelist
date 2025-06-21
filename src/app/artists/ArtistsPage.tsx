@@ -12,15 +12,15 @@ export default function ArtistsPage() {
 
   return (
     <>
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen pt-20 max-md:pt-10">
         {/* Hero Section */}
         <section
-          className="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden"
+          className="py-12 sm:py-20 px-5 sm:px-6 relative overflow-hidden"
           style={{ backgroundColor: colors.background }}
         >
           {/* Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
-            {Array.from({ length: 15 }, (_, i) => (
+            {Array.from({ length: 25 }, (_, i) => (
               <motion.div
                 key={i}
                 className="absolute w-3 h-3 bg-gradient-to-r from-[#8B2635]/20 to-[#D4A574]/20 rounded-full"
@@ -78,7 +78,7 @@ export default function ArtistsPage() {
 
         {/* Exhibition Info Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-14 px-5 sm:px-6"
           style={{ backgroundColor: colors.card }}
         >
           <div className="max-w-6xl mx-auto">
@@ -178,16 +178,16 @@ export default function ArtistsPage() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-white/60 backdrop-blur-sm border border-white/20 rounded-3xl p-8 shadow-xl">
+                <div className="bg-white/60 backdrop-blur-sm border border-white/20 rounded-3xl p-8 max-md:p-6 shadow-xl">
                   <div className="text-center">
-                    <Award className="w-16 h-16 text-[#8B2635] mx-auto mb-6" />
+                    <Award className="w-16 h-16 max-md:h-12 max-md:w-12 max-md:mb-3 text-[#8B2635] mx-auto mb-6" />
                     <h3
-                      className="text-2xl font-bold mb-4 text-[#2C1810]"
+                      className="text-2xl max-md:text-xl font-bold mb-4 max-md:mb-6 text-[#2C1810]"
                       style={{ fontFamily: fonts.heading }}
                     >
                       Exhibition Benefits
                     </h3>
-                    <ul className="space-y-3 text-left">
+                    <ul className="space-y-3 max-md:space-y-2 text-left">
                       <li className="flex items-center space-x-3">
                         <Star className="w-5 h-5 text-[#D4A574]" />
                         <span
@@ -234,7 +234,7 @@ export default function ArtistsPage() {
 
         {/* Coming Soon Section */}
         <section
-          className="py-16 px-4 sm:px-6"
+          className="py-16 max-md:py-14 px-5 sm:px-6"
           style={{ backgroundColor: colors.background }}
         >
           <div className="max-w-4xl mx-auto text-center">
