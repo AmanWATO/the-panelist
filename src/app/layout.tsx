@@ -34,11 +34,20 @@ export const metadata: Metadata = {
     description:
       "A one-frame art and caption platform celebrating visual subtlety and creative storytelling.",
     type: "website",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "The Panelist - One-frame stories that whisper",
+      },
+    ],
   },
   icons: {
     icon: `/the_panelist.png`,
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -83,10 +92,33 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
+        <meta
+          name="google-site-verification"
+          content="piYpoPqw0shD-_2F6fBUa5vlLQYqPf_uN8kYqUVwDbE"
+        />
+        <Script
+          id="gtm-head"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5JMSH7SZ');`,
+          }}
+        />
       </head>
       <body
         className={`${playfair.variable} ${inter.variable} ${crimson.variable} antialiased`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5JMSH7SZ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Header />
         {children}
         <Footer />
