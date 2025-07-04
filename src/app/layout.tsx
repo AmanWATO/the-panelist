@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Crimson_Text } from "next/font/google";
+import {
+  Playfair_Display,
+  Inter,
+  Crimson_Text,
+  Oswald,
+  Raleway,
+  Work_Sans,
+  League_Spartan,
+} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -15,6 +23,31 @@ const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+// Font imports and CSS variable mapping
+const oswald = Oswald({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const leagueSpartan = League_Spartan({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const workSans = Work_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+});
+
+const raleway = Raleway({
+  variable: "--font-alt",
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
 });
 
 const crimson = Crimson_Text({
@@ -47,7 +80,6 @@ export const metadata: Metadata = {
     icon: `/the_panelist.png`,
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -109,7 +141,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfair.variable} ${inter.variable} ${crimson.variable} antialiased`}
+        className={`${playfair.variable} ${oswald.variable} ${leagueSpartan.variable} ${workSans.variable} ${raleway.variable} ${inter.variable} ${crimson.variable} antialiased`}
       >
         <noscript>
           <iframe

@@ -9,8 +9,8 @@ export const colors = {
 };
 
 export const fonts = {
-  heading: "Playfair Display", // More artistic serif
-  body: "Inter", // Clean, highly readable
-  accent: "Crimson Text", // Elegant serif for quotes
-  button: "Inter", // Consistent with body
+  heading: "League Spartan",
+  body: "Work Sans",
+  accent: "Crimson Text",
+  button: "Raleway",
 };
